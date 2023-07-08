@@ -21,8 +21,9 @@ cargo install --force --path .
 complete -C __riptide_shell_completion riptide
 ```
 ## How it works / How to use
-- 1. After running for the first time it create configuration file in .config/riptide/conf.toml and .config/riptide/scripts
-- 2. You can specify path in toml file
+- After running for the first time it create configuration file in .config/riptide/conf.toml and .config/riptide/scripts
+- You can specify path in toml file
+- run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
 
 ## Example Configuration
 ```toml
