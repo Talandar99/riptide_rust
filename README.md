@@ -6,11 +6,12 @@ cli tool for running scripts
 - less junk in $PATH 
 
 # TODO / current state
-[x] running scripts from predefined path
-[x] autocompletion
-[] config file
-[] support for ~ (home directory)
-[] support for script arguments
+- [x] running scripts from predefined path
+- [x] autocompletion
+- [] config file
+- [] makefile or installation script
+- [] support for ~ (home directory)
+- [] support for script arguments
 
 ## installation
 ```
