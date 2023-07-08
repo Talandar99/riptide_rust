@@ -3,7 +3,7 @@ use std::fs;
 use std::process::Command;
 
 fn main() {
-    let folder_path = "/home/talandar/workspace/riptide/".to_string();
+    let folder_path = "/home/talandar/workspace/riptide/scripts/".to_string();
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {

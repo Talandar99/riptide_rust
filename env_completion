@@ -1,0 +1,1 @@
+complete -C __riptide_shell_completion riptide

@@ -1,16 +1,7 @@
 use std::fs;
-use std::io::{self, BufRead};
 
 fn main() {
-    //let file = fs::File::open("file.txt").expect("Cannot open the file");
-    //let reader = io::BufReader::new(file);
-    //let mut lines: Vec<String> = Vec::new();
-    //for line in reader.lines() {
-    //    if let Ok(line) = line {
-    //        lines.push(line);
-    //    }
-    //}
-    let folder_path = "/home/talandar";
+    let folder_path = "/home/talandar/workspace/riptide/scripts";
     let entries = match fs::read_dir(folder_path) {
         Ok(entries) => entries,
         Err(err) => {
