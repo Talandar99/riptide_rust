@@ -1,4 +1,4 @@
-# 🌊riptide🌊
+# 🌊 Riptide
 cli tool for running scripts 
 
 # why not symlink?
@@ -27,6 +27,12 @@ complete -C __riptide_shell_completion riptide
 
 ## Example Configuration
 ```toml
+[path]
 path="/home/tom/.config/riptide/scripts/"
-success_header=""
+
+[info_header]
+show_if_fail=true
+show_if_ok=true
+fail_msg="Fail:"
+ok_msg="Ok:"
 ```
