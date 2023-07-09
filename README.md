@@ -8,17 +8,18 @@ cli tool for running scripts
 # TODO / current state
 - [x] running scripts from predefined path
 - [x] autocompletion
+- [x] makefile or installation script
 - [ ] config file
-- [ ] makefile or installation script
 - [ ] support for ~ (home directory)
 - [ ] support for script arguments
 
-## installation
+## how to install
 ```
-cargo install --force --path .
+make install
 ```
+## how to remove
 ```
-complete -C __riptide_shell_completion riptide
+make uninstall
 ```
 ## How it works / How to use
 - After running for the first time it create configuration file in .config/riptide/conf.toml and .config/riptide/scripts
