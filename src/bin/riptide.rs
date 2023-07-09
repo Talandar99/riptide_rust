@@ -1,19 +1,17 @@
 use std::env;
-use std::fs;
 use std::process::Command;
 
 fn main() {
-    let folder_path = "/home/talandar/workspace/riptide/scripts/".to_string();
+    let folder_path = "/home/talandar/workspace/riptide/scripts/";
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {
-        println!("riptide takes script name as an argument");
+        println!("riptide takes application name as an argument");
         return;
     }
-    let script_name = &args[1];
+    let application_name = &args[1];
 
-    let output = Command::new("sh")
-        .arg(folder_path + script_name)
+    let output = Command::new(folder_path.to_owned() + application_name)
         .output()
         .expect("");
 
