@@ -9,7 +9,7 @@ cli tool for running scripts
 - [x] running scripts from predefined path
 - [x] autocompletion
 - [x] makefile or installation script
-- [ ] config file
+- [x] config file
 - [ ] support for ~ (home directory)
 - [ ] support for script arguments
 
@@ -17,6 +17,7 @@ cli tool for running scripts
 ```
 make install
 ```
+- make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
 ## how to remove
 ```
 make uninstall
@@ -26,14 +27,3 @@ make uninstall
 - You can specify path in toml file
 - run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
 
-## Example Configuration
-```toml
-[path]
-path="/home/tom/.config/riptide/scripts/"
-
-[info_header]
-show_if_fail=true
-show_if_ok=true
-fail_msg="Fail:"
-ok_msg="Ok:"
-```

@@ -1,8 +1,0 @@
-[path]
-path="/home/talandar/.config/riptide/scripts/"
-
-[info_header]
-show_if_fail=true
-show_if_ok=true
-fail_msg="Fail:"
-ok_msg="Ok:"

@@ -1,8 +1,9 @@
-use lib::configuration;
+use lib::configuration::*;
 use std::env;
 use std::process::Command;
 fn main() {
-    let folder_path = "/home/talandar/workspace/riptide/scripts/";
+    let config = get_confuguration();
+    let folder_path = config.path.path;
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
         println!("riptide takes application name as an argument");
@@ -16,9 +17,9 @@ fn main() {
 
     if output.status.success() {
         let output_str = String::from_utf8_lossy(&output.stdout);
-        println!("OK: {}", output_str);
+        println!("{}{}", config.info_header.ok_msg, output_str);
     } else {
         let error_str = String::from_utf8_lossy(&output.stderr);
-        println!("Error: {}", error_str);
+        println!("{}{}", config.info_header.fail_msg, error_str);
     }
 }

@@ -1,7 +1,10 @@
 use std::fs;
 
+use lib::configuration::get_confuguration;
+
 fn main() {
-    let folder_path = "/home/talandar/workspace/riptide/scripts";
+    let config = get_confuguration();
+    let folder_path = config.path.path;
     let entries = match fs::read_dir(folder_path) {
         Ok(entries) => entries,
         Err(err) => {

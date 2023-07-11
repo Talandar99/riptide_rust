@@ -1,4 +1,3 @@
-// Twój kod konfiguracji
 use serde_derive::Deserialize;
 use std::fs;
 use std::process::exit;
@@ -6,44 +5,66 @@ use toml;
 
 #[derive(Deserialize)]
 pub struct Data {
-    path: Path,
-    info_header: InfoHeader,
+    pub path: Path,
+    pub info_header: InfoHeader,
 }
 
 #[derive(Deserialize)]
 pub struct Path {
-    path: String,
+    pub path: String,
 }
 
 #[derive(Deserialize)]
 pub struct InfoHeader {
-    show_if_fail: bool,
-    show_if_ok: bool,
-    fail_msg: String,
-    ok_msg: String,
+    pub show_if_fail: bool,
+    pub show_if_ok: bool,
+    pub fail_msg: String,
+    pub ok_msg: String,
 }
 
 pub fn get_confuguration() -> Data {
-    let filename = "conf.toml";
-    let contents = match fs::read_to_string(filename) {
+    let home_dir = match dirs::home_dir() {
+        Some(path) => path,
+        None => {
+            println!("Can't get configuration");
+            exit(1);
+        }
+    };
+    let filename = "config.toml";
+
+    let path = format!(
+        "{}{}{}",
+        home_dir.to_str().unwrap(),
+        "/.config/riptide/",
+        filename,
+    );
+    let contents = match fs::read_to_string(path) {
         Ok(c) => c,
         Err(_) => {
-            eprintln!("Could not read file `{}`", filename);
+            eprintln!("I am looking for config.toml file in ~\\.config\\riptide\\ \nand file does not exist :/");
             exit(1);
         }
     };
 
-    let data: Data = match toml::from_str(&contents) {
+    let mut data: Data = match toml::from_str(&contents) {
         Ok(d) => d,
         Err(_) => {
             eprintln!("Unable to load data from `{}`", filename);
             exit(1);
         }
     };
-    //println!("{}", data.path.path); // => 42.69.42.0
-    //println!("{}", data.info_header.show_if_fail); // => 42
-    //println!("{}", data.info_header.show_if_ok); // => 42
-    //println!("{}", data.info_header.fail_msg); // => 42
-    //println!("{}", data.info_header.ok_msg); // => 42
+
+    if !data.path.path.ends_with('/') {
+        data.path.path = data.path.path + "/";
+    }
+    if let Ok(metadata) = fs::metadata(data.path.path.clone()) {
+        if !metadata.is_dir() {
+            println!("your \"path\" is pointing at file not directory. Add proper directory path");
+            exit(1);
+        }
+    } else {
+        println!("your \"path\" does not exist. Add proper directory path");
+        exit(1);
+    }
     return data;
 }
