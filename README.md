@@ -27,3 +27,13 @@ make uninstall
 - You can specify path in toml file
 - run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
 
+## Default config file
+```toml
+[path]
+path="/home/$HOME/my_scripts/"
+[info_header]
+show_if_fail=true
+show_if_ok=true
+fail_msg="Fail: "
+ok_msg="Ok: \n"
+```
