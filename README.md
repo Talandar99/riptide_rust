@@ -2,7 +2,7 @@
 cli tool for running scripts 
 
 # why not symlink?
-- to eliminate risc of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
+- to eliminate risk of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
 - less junk in $PATH 
 
 # TODO / current state
