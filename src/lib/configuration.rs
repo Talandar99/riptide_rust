@@ -1,3 +1,4 @@
+// Twój kod konfiguracji
 use serde_derive::Deserialize;
 use std::fs;
 use std::process::exit;
@@ -22,7 +23,7 @@ pub struct InfoHeader {
     ok_msg: String,
 }
 
-pub fn get_confuguration() {
+pub fn get_confuguration() -> Data {
     let filename = "conf.toml";
     let contents = match fs::read_to_string(filename) {
         Ok(c) => c,
@@ -44,5 +45,5 @@ pub fn get_confuguration() {
     //println!("{}", data.info_header.show_if_ok); // => 42
     //println!("{}", data.info_header.fail_msg); // => 42
     //println!("{}", data.info_header.ok_msg); // => 42
-    return Data;
+    return data;
 }

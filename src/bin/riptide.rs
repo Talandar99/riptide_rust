@@ -1,10 +1,9 @@
+use lib::configuration;
 use std::env;
 use std::process::Command;
-
 fn main() {
     let folder_path = "/home/talandar/workspace/riptide/scripts/";
     let args: Vec<String> = env::args().collect();
-
     if args.len() < 2 {
         println!("riptide takes application name as an argument");
         return;
