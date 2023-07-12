@@ -3,8 +3,8 @@ Simple cli tool for running scripts
 
 ## How it works / How to use
 - Add scripts to `~/my_scripts` directory (or other directory specified in `$HOME/.config/riptide`)
-- run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
-example:
+- run by typing `riptide $SCRIPT_NAME`. You can use `<TAB>` for autocompletion
+- example:
 ```bash
 ~> riptide my_script2.sh
 # output
