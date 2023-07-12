@@ -7,7 +7,7 @@ Simple cli tool for running scripts
 ## Requirements
 - Rust
 - Bash (not tested on other shells)
-- [bash-completion](https://github.com/scop/bash-completion) **(optional)** (if you want to autocomplete)
+- [bash-completion](https://github.com/scop/bash-completion) **(optional)** (install for autocomplete)
 ## How to install
 #### - basic install
 ```
