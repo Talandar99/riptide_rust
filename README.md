@@ -15,7 +15,7 @@ make install
 ```
 #### - install with alias (typing `rt` insted of `riptide` is faster but check first if it's not in conflict with other command)
 ```
-install-with-alias
+make install-with-alias
 ```
 #### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
 ## How to remove
