@@ -17,7 +17,7 @@ make install
 ```
 install-with-alias
 ```
-#### !!note!! make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
+#### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
 ## How to remove
 ```
 make uninstall
