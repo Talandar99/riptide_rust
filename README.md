@@ -13,7 +13,7 @@ Simple cli tool for running scripts
 ```
 make install
 ```
-#### - install with alias (typing rt insted riptide is faster but check first if it's not in conflict with other command)
+#### - install with alias (typing `rt` insted riptide is faster but check first if it's not in conflict with other command)
 ```
 install-with-alias
 ```
