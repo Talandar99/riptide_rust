@@ -1,6 +1,16 @@
 # 🌊 Riptide 
 Simple cli tool for running scripts 
 
+## How it works / How to use
+- Add scripts to `~/my_scripts directory` (or other directory specified in `$HOME/.config/riptide`)
+- run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
+example:
+```bash
+~> riptide my_script2.sh
+# output
+Hello From my_script2
+```
+
 ## Why not symlink?
 - to eliminate risk of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
 - less junk in $PATH 
@@ -22,15 +32,7 @@ make install-with-alias
 ```
 make uninstall
 ```
-## How it works / How to use
-- You can specify scipts path in toml file
-- run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
-example:
-```bash
-~> riptide my_script2.sh
-# output
-Hello From my_script2
-```
+
 
 ## Default config file
 ```toml
