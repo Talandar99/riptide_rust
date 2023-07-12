@@ -46,3 +46,4 @@ path="/home/$HOME/my_scripts/"
 - [x] support for `rt` alias
 - [ ] support for script arguments
 - [ ] support for ~ (home directory)
+- [ ] support for multiple paths
