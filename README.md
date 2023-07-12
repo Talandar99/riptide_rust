@@ -26,9 +26,9 @@ make uninstall
 - You can specify scipts path in toml file
 - run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
 example:
-```
-$ riptide my_script2.sh
-...
+```bash
+~> riptide my_script2.sh
+# output
 Hello From my_script2
 ```
 
