@@ -23,9 +23,14 @@ make install-with-alias
 make uninstall
 ```
 ## How it works / How to use
-- After running for the first time it create configuration file in .config/riptide/conf.toml and .config/riptide/scripts
-- You can specify path in toml file
+- You can specify scipts path in toml file
 - run by typing `riptide $scriptname`. You can use `<TAB>` for autocompletion
+example:
+```
+$ riptide my_script2.sh
+...
+Hello From my_script2
+```
 
 ## Default config file
 ```toml
