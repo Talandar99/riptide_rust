@@ -1,22 +1,18 @@
-# 🌊 Riptide
-cli tool for running scripts 
+# 🌊 Riptide 
+Simple cli tool for running scripts 
 
 ## Why not symlink?
 - to eliminate risk of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
 - less junk in $PATH 
 
-
-## TODO / current state
-- [x] running scripts from predefined path
-- [x] autocompletion
-- [x] makefile or installation script
-- [x] config file
-- [ ] support for ~ (home directory)
-- [ ] support for script arguments
-
 ## How to install
+- basic installation
 ```
 make install
+```
+- installation with alias (typing rt insted riptide is faster but check first if it's not in conflict with other command)
+```
+install-with-alias
 ```
 - make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
 ## How to remove
@@ -33,3 +29,12 @@ make uninstall
 [path]
 path="/home/$HOME/my_scripts/"
 ```
+
+## TODO / current state
+- [x] running scripts from predefined path
+- [x] autocompletion
+- [x] makefile or installation script
+- [x] config file
+- [x] support for `rt` alias
+- [ ] support for script arguments
+- [ ] support for ~ (home directory)
