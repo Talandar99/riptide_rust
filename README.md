@@ -4,17 +4,20 @@ Simple cli tool for running scripts
 ## Why not symlink?
 - to eliminate risk of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
 - less junk in $PATH 
-
+## Requirements
+- Rust
+- Bash (not tested on other shells)
+- [bash-completion](https://github.com/scop/bash-completion) **(optional)** (if you want to autocomplete)
 ## How to install
-- basic installation
+#### - basic install
 ```
 make install
 ```
-- installation with alias (typing rt insted riptide is faster but check first if it's not in conflict with other command)
+#### - install with alias (typing rt insted riptide is faster but check first if it's not in conflict with other command)
 ```
 install-with-alias
 ```
-- make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
+#### !!note!! make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
 ## How to remove
 ```
 make uninstall
