@@ -5,6 +5,7 @@ cli tool for running scripts
 - to eliminate risk of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
 - less junk in $PATH 
 
+
 ## TODO / current state
 - [x] running scripts from predefined path
 - [x] autocompletion
@@ -31,9 +32,4 @@ make uninstall
 ```toml
 [path]
 path="/home/$HOME/my_scripts/"
-[info_header]
-show_if_fail=true
-show_if_ok=true
-fail_msg="Fail: "
-ok_msg="Ok: \n"
 ```

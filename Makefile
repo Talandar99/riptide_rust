@@ -22,11 +22,6 @@ install:
 	@mkdir -p ~/.config/riptide
 	@echo "[path]" > ~/.config/riptide/config.toml
 	@echo "path=\"$(HOME)/my_scripts/\"" >> ~/.config/riptide/config.toml
-	@echo "[info_header]" >> ~/.config/riptide/config.toml
-	@echo "show_if_fail=true" >> ~/.config/riptide/config.toml
-	@echo "show_if_ok=true" >> ~/.config/riptide/config.toml
-	@echo "fail_msg=\"Fail: \"" >> ~/.config/riptide/config.toml
-	@echo "ok_msg=\"Ok: \\n\"" >> ~/.config/riptide/config.toml
 	@mkdir -p ~/my_scripts
 	@echo "#!/bin/bash" > ~/my_scripts/my_script1.sh
 	@echo "echo \"Hello From my_script1\"" >> ~/my_scripts/my_script1.sh

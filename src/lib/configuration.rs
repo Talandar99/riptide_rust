@@ -6,20 +6,11 @@ use toml;
 #[derive(Deserialize)]
 pub struct Data {
     pub path: Path,
-    pub info_header: InfoHeader,
 }
 
 #[derive(Deserialize)]
 pub struct Path {
     pub path: String,
-}
-
-#[derive(Deserialize)]
-pub struct InfoHeader {
-    pub show_if_fail: bool,
-    pub show_if_ok: bool,
-    pub fail_msg: String,
-    pub ok_msg: String,
 }
 
 pub fn get_confuguration() -> Data {

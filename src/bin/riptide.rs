@@ -1,6 +1,7 @@
 use lib::configuration::*;
 use std::env;
 use std::process::Command;
+
 fn main() {
     let config = get_confuguration();
     let folder_path = config.path.path;
@@ -11,15 +12,18 @@ fn main() {
     }
     let application_name = &args[1];
 
-    let output = Command::new(folder_path.to_owned() + application_name)
-        .output()
-        .expect("");
+    let mut command = Command::new("sh"); // Lub wpisz nazwę swojego preferowanego powłoki (np. "bash", "cmd", "powershell", itp.)
 
-    if output.status.success() {
-        let output_str = String::from_utf8_lossy(&output.stdout);
-        println!("{}{}", config.info_header.ok_msg, output_str);
-    } else {
-        let error_str = String::from_utf8_lossy(&output.stderr);
-        println!("{}{}", config.info_header.fail_msg, error_str);
-    }
+    command
+        .arg("-c")
+        .arg(format!("{}{}", folder_path, application_name));
+
+    command
+        .stdin(std::process::Stdio::inherit())
+        .stdout(std::process::Stdio::inherit())
+        .stderr(std::process::Stdio::inherit());
+
+    let mut child = command.spawn().expect("Failed to execute command.");
+
+    child.wait().expect("Failed to wait for command execution.");
 }
