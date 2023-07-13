@@ -37,7 +37,7 @@ make uninstall
 ## Default config file
 ```toml
 [path]
-path="/home/$HOME/my_scripts/"
+path="/home/$USER/my_scripts/"
 ```
 
 ## TODO / current state
