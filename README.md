@@ -10,10 +10,6 @@ Simple cli tool for running scripts
 # output
 Hello From my_script2
 ```
-
-## Why not symlink?
-- to eliminate risk of running specific scripts by accident. For example imagine that you have script that modify recursivly all files in current directory
-- less junk in $PATH 
 ## Requirements
 - Rust
 - Bash (not tested on other shells)
