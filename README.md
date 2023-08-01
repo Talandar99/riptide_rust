@@ -7,7 +7,13 @@ Simple cli tool for running scripts
 - example:
 ```bash
 ~> riptide my_script2.sh
-# output
+# output:
+Hello From my_script2
+```
+- example (with alias):
+```bash
+~> rt my_script2.sh
+# output:
 Hello From my_script2
 ```
 ## Requirements
@@ -15,27 +21,24 @@ Hello From my_script2
 - Bash (not tested on other shells)
 - [bash-completion](https://github.com/scop/bash-completion) **(optional)** (install for autocomplete)
 ## How to install
-#### - basic install
+##### - basic install
 ```
 make install
 ```
-#### - install with alias (typing `rt` insted of `riptide` is faster but check first if it's not in conflict with other command)
+##### - install with alias (typing `rt` insted of `riptide` is faster but check first if it's not in conflict with other command)
 ```
 make install-with-alias
 ```
-#### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
+##### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
 ## How to remove
 ```
 make uninstall
 ```
-
-
 ## Default config file
 ```toml
 [path]
 path="/home/$USER/my_scripts/"
 ```
-
 ## TODO / current state
 - [x] running scripts from predefined path
 - [x] autocompletion
@@ -43,7 +46,8 @@ path="/home/$USER/my_scripts/"
 - [x] config file
 - [x] support for `rt` alias
 - [ ] support for script arguments
-- [ ] remote execution (similar to ansible but simpler)
+- [ ] remote execution 
+- [ ] manual/help command
 - [ ] support for multiple paths
 - [ ] support for ~ (home directory)
 - [ ] support for other shells 
