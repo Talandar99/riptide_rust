@@ -15,7 +15,7 @@ fn main() {
         print!("{}", args[2])
     }
 
-    let mut command = Command::new("sh"); // Lub wpisz nazwę swojego preferowanego powłoki (np. "bash", "cmd", "powershell", itp.)
+    let mut command = Command::new("sh");
 
     command
         .arg("-c")

@@ -8,7 +8,7 @@ fn main() {
     let entries = match fs::read_dir(folder_path) {
         Ok(entries) => entries,
         Err(err) => {
-            eprintln!("Błąd: {}", err);
+            eprintln!("Error: {}", err);
             return;
         }
     };
