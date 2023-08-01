@@ -47,5 +47,10 @@ path="/home/$HOME/my_scripts/"
 - [x] config file
 - [x] support for `rt` alias
 - [ ] support for script arguments
-- [ ] support for ~ (home directory)
+- [ ] remote execution (similar to ansible but simpler)
 - [ ] support for multiple paths
+- [ ] support for ~ (home directory)
+- [ ] support for other shells 
+    - [ ] ash
+    - [ ] fish
+    - [ ] nush

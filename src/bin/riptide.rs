@@ -11,6 +11,9 @@ fn main() {
         return;
     }
     let application_name = &args[1];
+    for _i in 2..args.len() {
+        print!("{}", args[2])
+    }
 
     let mut command = Command::new("sh"); // Lub wpisz nazwę swojego preferowanego powłoki (np. "bash", "cmd", "powershell", itp.)
 
