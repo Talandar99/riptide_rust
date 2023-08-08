@@ -27,12 +27,22 @@ install:
 	@echo "[path]" > ~/.config/riptide/config.toml
 	@echo "path=\"$(HOME)/my_scripts/\"" >> ~/.config/riptide/config.toml
 	@mkdir -p ~/my_scripts
-	@echo "#!/bin/bash" > ~/my_scripts/my_script1.sh
-	@echo "echo \"Hello From my_script1\"" >> ~/my_scripts/my_script1.sh
-	@chmod +x ~/my_scripts/my_script1.sh
-	@echo "#!/bin/bash" > ~/my_scripts/my_script2.sh
-	@echo "echo \"Hello From my_script2\"" >> ~/my_scripts/my_script2.sh
-	@chmod +x ~/my_scripts/my_script2.sh
+	@echo "#!/bin/bash" > ~/my_scripts/my_script.sh
+	@echo "" >> ~/my_scripts/my_script.sh
+	@echo "echo \"Hello From my_script\"" >> ~/my_scripts/my_script.sh
+	@echo "" >> ~/my_scripts/my_script.sh
+	@chmod +x ~/my_scripts/my_script.sh
+
+	@echo "#!/bin/bash" > ~/my_scripts/echo_script_args.sh
+	@echo "" >> ~/my_scripts/echo_script_args.sh
+	@echo "echo \"Hello From echo_script_args\"" >> ~/my_scripts/echo_script_args.sh
+	@echo "" >> ~/my_scripts/echo_script_args.sh
+	@echo "for arg in \"\$$@\"; do" >> ~/my_scripts/echo_script_args.sh
+	@echo "echo \"\$$arg\"" >> ~/my_scripts/echo_script_args.sh
+	@echo "done" >> ~/my_scripts/echo_script_args.sh
+	@echo "" >> ~/my_scripts/echo_script_args.sh
+	@chmod +x ~/my_scripts/echo_script_args.sh
+    
 
 install-with-alias: install
 	@if ! grep -qF "alias $(APP_ALIAS)=" $(BASHRC); then \
