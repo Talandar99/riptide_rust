@@ -4,17 +4,25 @@ Simple cli tool for running scripts
 ## How it works / How to use
 - Add scripts to `~/my_scripts` directory (or other directory specified in `$HOME/.config/riptide`)
 - run by typing `riptide $SCRIPT_NAME`. You can use `<TAB>` for autocompletion
-- example:
+- example usage:
 ```bash
-~> riptide my_script2.sh
+~> riptide my_script.sh
 # output:
-Hello From my_script2
+Hello From my_script
 ```
-- example (with alias):
+- You can use alias `rt` insted of typing `riptide` (only if installed using `make install-with-alias`):
 ```bash
-~> rt my_script2.sh
+~> rt my_script.sh
 # output:
-Hello From my_script2
+Hello From my_script
+```
+- You can also use script arguments:
+```bash
+~> riptide echo_script_args.sh foo bar 
+# output:
+Hello From echo_script_args
+foo
+bar
 ```
 ## Requirements
 - Rust
