@@ -45,7 +45,7 @@ path="/home/$USER/my_scripts/"
 - [x] makefile or installation script
 - [x] config file
 - [x] support for `rt` alias
-- [ ] support for script arguments
+- [x] support for script arguments
 - [ ] remote execution 
 - [ ] manual/help command
 - [ ] support for multiple paths

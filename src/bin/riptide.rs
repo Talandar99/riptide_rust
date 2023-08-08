@@ -10,16 +10,26 @@ fn main() {
         println!("riptide takes application name as an argument");
         return;
     }
-    let application_name = &args[1];
-    for _i in 2..args.len() {
-        print!("{}", args[2])
-    }
+    let script_name = &args[1];
+    let mut script_arguments = args.clone();
+    script_arguments.drain(0..2);
+
+    let concated_script_arguments = script_arguments
+        .iter()
+        .map(|x| x.to_string())
+        .collect::<Vec<String>>()
+        .join(" ");
 
     let mut command = Command::new("sh");
 
-    command
-        .arg("-c")
-        .arg(format!("{}{}", folder_path, application_name));
+    command.arg("-c").arg(format!(
+        "{}{} {}",
+        folder_path, script_name, concated_script_arguments
+    ));
+
+    for script_argument in script_arguments {
+        command.arg(script_argument);
+    }
 
     command
         .stdin(std::process::Stdio::inherit())
