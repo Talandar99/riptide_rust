@@ -14,6 +14,19 @@ fn main() {
     let mut script_arguments = args.clone();
     script_arguments.drain(0..2);
 
+    for (index, _arg) in args.iter().enumerate() {
+        if _arg == "-r" || _arg == "--remote" {
+            println!("-------------------------------");
+            println!("User attempted remote execution");
+            println!("Index with the flag: {}", index);
+            println!("remote_address {}", script_arguments[index - 1]);
+            println!("-------------------------------");
+
+            script_arguments.drain((index - 2)..);
+            break;
+        }
+    }
+
     let concated_script_arguments = script_arguments
         .iter()
         .map(|x| x.to_string())
