@@ -42,6 +42,11 @@ install:
 	@echo "done" >> ~/my_scripts/echo_script_args.sh
 	@echo "" >> ~/my_scripts/echo_script_args.sh
 	@chmod +x ~/my_scripts/echo_script_args.sh
+
+	@echo "#!/bin/bash" > ~/my_scripts/make_dir.sh
+	@echo "mkdir $1" > ~/my_scripts/make_dir.sh
+	@chmod +x ~/my_scripts/make_dir.sh
+	 
     
 
 install-with-alias: install

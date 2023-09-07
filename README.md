@@ -48,7 +48,7 @@ make install
 ```
 make install-with-alias
 ```
-##### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 2 examples
+##### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 3 examples
 ## How to remove
 ```
 make uninstall
@@ -65,7 +65,7 @@ path="/home/$USER/my_scripts/"
 - [x] config file
 - [x] support for `rt` alias
 - [x] support for script arguments
-- [ ] remote execution 
+- [x] remote execution 
 - [ ] manual/help command
 - [ ] support for multiple paths
 - [ ] support for ~ (home directory)
