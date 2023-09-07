@@ -29,6 +29,7 @@ pub fn get_confuguration() -> Data {
         "/.config/riptide/",
         filename,
     );
+
     let contents = match fs::read_to_string(path) {
         Ok(c) => c,
         Err(_) => {
@@ -48,6 +49,7 @@ pub fn get_confuguration() -> Data {
     if !data.path.path.ends_with('/') {
         data.path.path = data.path.path + "/";
     }
+
     if let Ok(metadata) = fs::metadata(data.path.path.clone()) {
         if !metadata.is_dir() {
             println!("your \"path\" is pointing at file not directory. Add proper directory path");
