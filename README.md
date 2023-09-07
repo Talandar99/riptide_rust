@@ -24,7 +24,7 @@ Hello From echo_script_args
 foo
 bar
 ```
-- You can execute script using ssh with `--remote` or `-r` flag:
+- You can execute script using ssh with `--remote` or `-r` flag. Script will be coppied via scp, executed, and removed from remote host:
 ```bash
 ~> riptide make_dir.sh test --remote username@hostname
 # output:
