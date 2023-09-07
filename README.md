@@ -24,9 +24,20 @@ Hello From echo_script_args
 foo
 bar
 ```
+- You can execute script using ssh with `--remote` or `-r` flag:
+```bash
+~> riptide make_dir.sh test --remote username@hostname
+# output:
+-------------------------------
+Remote Execution of make_dir.sh
+at username@hostname
+-------------------------------
+make_dir.sh         100%   21     9.2KB/s   00:00
+```
 ## Requirements
 - Rust
 - Bash (not tested on other shells)
+- SSH 
 - [bash-completion](https://github.com/scop/bash-completion) **(optional)** (install for autocomplete)
 ## How to install
 ##### - basic install
