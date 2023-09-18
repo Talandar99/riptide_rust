@@ -39,6 +39,8 @@ make_dir.sh         100%   21     9.2KB/s   00:00
 - Bash (not tested on other shells)
 - SSH 
 - [bash-completion](https://github.com/scop/bash-completion) **(optional)** (install for autocomplete)
+- make sure you have `~/.cargo/bin` in your path 
+
 ## How to install
 ##### - basic install
 ```
@@ -58,6 +60,13 @@ make uninstall
 [path]
 path="/home/$USER/my_scripts/"
 ```
+## FAQ
+#### command not found. Why?
+- Make sure you added .cargo/bin to your path. Just add this into `.bashrc`. I will add global installation in future
+```
+export PATH=$HOME/.cargo/bin:$PATH
+```
+and restart your terminal emulator
 ## TODO / current state
 - [x] running scripts from predefined path
 - [x] autocompletion
