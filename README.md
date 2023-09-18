@@ -62,11 +62,11 @@ path="/home/$USER/my_scripts/"
 ```
 ## FAQ
 #### command not found. Why?
-- Make sure you added .cargo/bin to your path. Just add this into `.bashrc`. I will add global installation in future
+Make sure you added .cargo/bin to your path. Just add this into `.bashrc`:
 ```
 export PATH=$HOME/.cargo/bin:$PATH
 ```
-and restart your terminal emulator
+and restart your terminal emulator . I will add global installation in future
 ## TODO / current state
 - [x] running scripts from predefined path
 - [x] autocompletion
