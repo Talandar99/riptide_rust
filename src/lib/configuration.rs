@@ -6,6 +6,7 @@ use toml;
 #[derive(Deserialize)]
 pub struct Data {
     pub path: Path,
+    pub editor: Editor,
 }
 
 #[derive(Deserialize)]
@@ -13,7 +14,12 @@ pub struct Path {
     pub path: String,
 }
 
-pub fn get_confuguration() -> Data {
+#[derive(Deserialize)]
+pub struct Editor {
+    pub editor: String,
+}
+
+pub fn get_configuration() -> Data {
     let home_dir = match dirs::home_dir() {
         Some(path) => path,
         None => {

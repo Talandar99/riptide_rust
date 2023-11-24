@@ -1,9 +1,9 @@
 use std::fs;
 
-use lib::configuration::get_confuguration;
+use lib::configuration::get_configuration;
 
 fn main() {
-    let config = get_confuguration();
+    let config = get_configuration();
     let folder_path = config.path.path;
     let entries = match fs::read_dir(folder_path) {
         Ok(entries) => entries,

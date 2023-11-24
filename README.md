@@ -34,6 +34,18 @@ at username@hostname
 -------------------------------
 make_dir.sh         100%   21     9.2KB/s   00:00
 ```
+- You can edit script using `--edit` or `-e` flag. default editor is VIM but you can change it in config file
+```bash
+~> riptide --edit make_dir.sh
+# output: "it will open vim"
+```
+- You can cat script into your terminal using `--cat` or `-c` flag.
+```bash
+~> riptide --cat make_dir.sh
+# output:
+#!/bin/bash
+mkdir 
+```
 ## Requirements
 - Rust
 - Bash (not tested on other shells)
@@ -58,7 +70,9 @@ make uninstall
 ## Default config file
 ```toml
 [path]
-path="/home/$USER/my_scripts/"
+path="/home/talandar/my_scripts/"
+[editor]
+editor="vim"
 ```
 ## FAQ
 #### command not found. Why?
@@ -75,6 +89,8 @@ and restart your terminal emulator . I will add global installation in future
 - [x] support for `rt` alias
 - [x] support for script arguments
 - [x] remote execution 
+- [x] cat - you can see script with a flag
+- [x] edit - you can script with a flag
 - [ ] manual/help command
 - [ ] support for multiple paths
 - [ ] support for ~ (home directory)

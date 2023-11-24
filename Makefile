@@ -26,6 +26,8 @@ install:
 	@mkdir -p ~/.config/riptide
 	@echo "[path]" > ~/.config/riptide/config.toml
 	@echo "path=\"$(HOME)/my_scripts/\"" >> ~/.config/riptide/config.toml
+	@echo "[editor]" >> ~/.config/riptide/config.toml
+	@echo "editor=\"vim\"" >> ~/.config/riptide/config.toml
 	@mkdir -p ~/my_scripts
 	@echo "#!/bin/bash" > ~/my_scripts/my_script.sh
 	@echo "" >> ~/my_scripts/my_script.sh
@@ -44,7 +46,7 @@ install:
 	@chmod +x ~/my_scripts/echo_script_args.sh
 
 	@echo "#!/bin/bash" > ~/my_scripts/make_dir.sh
-	@echo "mkdir $1" > ~/my_scripts/make_dir.sh
+	@echo "mkdir $1" >> ~/my_scripts/make_dir.sh
 	@chmod +x ~/my_scripts/make_dir.sh
 	 
     
