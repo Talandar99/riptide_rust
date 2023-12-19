@@ -91,7 +91,7 @@ and restart your terminal emulator . I will add global installation in future
 - [x] remote execution 
 - [x] cat - you can see script with a flag
 - [x] edit - you can script with a flag
-- [ ] manual/help command
+- [x] manual/help command
 - [ ] support for multiple paths
 - [ ] support for ~ (home directory)
 - [ ] support for other shells 

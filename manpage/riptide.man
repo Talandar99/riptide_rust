@@ -1,0 +1,96 @@
+.TH RIPTIDE 1 riptide\-0.6.0
+.SH NAME 
+riptide \- automation tool for running scripts 
+.SH TLDR
+.TP 
+.B run script example.sh
+riptide example.sh 
+.TP 
+.B edit script example.sh
+riptide -e example.sh
+.TP 
+.B cat content of script example.sh
+riptide -c example.sh
+.TP 
+.B execute remotly example.sh at user@hostname.com
+riptide example.sh -r user@hostname.com
+.SH SYNOPSIS
+.B riptide 
+.RB [\-c|\-e]
+.IR [SCRIPT_NAME]
+.RB [\-r]
+.RB 
+.IR [USER@HOST]
+.SH DESCRIPTION
+Riptide is simple cli tool designed for running scripts. 
+It is capable of executing script remotly or localy by using 
+.B \-r or \-\-remote
+flag.
+If
+.B bash-completion
+is installed, riptide will automaticly sugest scripts and autocomplete by pressing 
+.B [TAB]
+key. By default all scripts folder is at 
+.B ~/my_scripts
+You can change it in config file. For sake of convenience use 
+.B \-c or \-\-cat 
+to cat content of script and edit it with 
+.B \-e or \-\-edit 
+flag. Default editor is vim, but you can change it in config file. Config is located at
+.B ~/.config/riptide/config.toml
+
+.SH OPTIONS
+.TP 
+.B \-c | \-\-cat
+cat script content to the screen
+.TP 
+.B \-e | \-\-edit
+edit script using editor 
+.TP 
+.B \-r | \-\-remote
+execute script remotly using ssh
+.SH AUTHOR
+Grzegorz Cichosz (grzegorzc66@gmail.com)
+.SH COPYRIGHT
+GNU GENERAL PUBLIC LICENSE Version 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

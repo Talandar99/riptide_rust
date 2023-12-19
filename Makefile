@@ -44,10 +44,11 @@ install:
 	@echo "done" >> ~/my_scripts/echo_script_args.sh
 	@echo "" >> ~/my_scripts/echo_script_args.sh
 	@chmod +x ~/my_scripts/echo_script_args.sh
-
 	@echo "#!/bin/bash" > ~/my_scripts/make_dir.sh
 	@echo "mkdir $1" >> ~/my_scripts/make_dir.sh
 	@chmod +x ~/my_scripts/make_dir.sh
+	echo "Adding manpage for $(APP_ALIAS)...";
+	@sudo cp manpage/riptide.man /usr/share/man/man1/riptide.1
 	 
     
 
@@ -72,5 +73,7 @@ uninstall:
 	@sed -i '/alias rt=riptide/d' $(BASHRC)
 	@sed -i '/$(COMMAND_WITH_ALIAS)/d' $(BASHRC)
 	@echo "Application uninstalled and shell completion removed."
+	echo "Removing manpage for $(APP_ALIAS)...";
+	@sudo rm /usr/share/man/man1/riptide.1
 
 .PHONY: all install uninstall install-with-alias
