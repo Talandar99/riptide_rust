@@ -39,15 +39,21 @@ fn main() {
     script_arguments.drain(0..1);
 
     for (index, _arg) in args.iter().enumerate() {
-        if _arg.to_lowercase() == "-e" || _arg.to_lowercase() == "--edit" {
+        if _arg.to_lowercase() == "e"
+            || _arg.to_lowercase() == "-e"
+            || _arg.to_lowercase() == "--edit" {
             script_arguments.drain((index - 1)..(index));
             flag = Flag::Edit;
         }
-        if _arg.to_lowercase() == "-c" || _arg.to_lowercase() == "--cat" {
+        if _arg.to_lowercase() == "c"
+            || _arg.to_lowercase() == "-c"
+            || _arg.to_lowercase() == "--cat" {
             script_arguments.drain((index - 1)..(index));
             flag = Flag::Cat;
         }
-        if _arg.to_lowercase() == "-r" || _arg.to_lowercase() == "--remote" {
+        if _arg.to_lowercase() == "s"
+            || _arg.to_lowercase() == "-s"
+            || _arg.to_lowercase() == "--ssh" {
             flag = Flag::RemoteSsh;
             remote_address = script_arguments[index].clone();
         }
@@ -69,27 +75,28 @@ fn main() {
         }
         Flag::RemoteSsh => {
             println!("--------------------------------------------------");
-            println!("Remote Execution of {}", script_name);
+            println!("Remote SSH Execution of {}", script_name);
             println!("at {}", remote_address);
             println!("--------------------------------------------------");
             execute_command(format!(
                 "scp {}{} {}:~/{} ",
-                folder_path, script_name, remote_address, script_name
-            ));
+                folder_path, script_name, remote_address, script_name));
             execute_command(format!(
                 "ssh {} ./{} {}",
-                remote_address, script_name, concated_script_arguments
-            ));
-            execute_command(format!("ssh {} rm {} ", remote_address, script_name));
+                remote_address, script_name, concated_script_arguments));
+            execute_command(format!("ssh {} rm {} ",
+                                    remote_address, script_name));
         }
         Flag::Edit => {
-            execute_command(format!("{} {}{}", editor, folder_path, script_name));
+            execute_command(format!("{} {}{}",
+                                    editor, folder_path, script_name));
         }
         Flag::Cat => {
             println!("--------------------------------------------------");
             println!("Content of {} :", script_name);
             println!("--------------------------------------------------");
-            execute_command(format!("cat {}{}", folder_path, script_name));
+            execute_command(format!("cat {}{}",
+                                    folder_path, script_name));
         }
     }
 }
