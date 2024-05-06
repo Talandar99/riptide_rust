@@ -1,6 +1,6 @@
 use lib::configuration::*;
-use std::env;
 use std::process::Command;
+use std::{env, io};
 
 enum Flag {
     Cat,
@@ -39,23 +39,42 @@ fn main() {
     script_arguments.drain(0..1);
 
     for (index, _arg) in args.iter().enumerate() {
-        if _arg.to_lowercase() == "e"
-            || _arg.to_lowercase() == "-e"
-            || _arg.to_lowercase() == "--edit" {
+        if _arg.to_lowercase() == "-e" || _arg.to_lowercase() == "--edit" {
             script_arguments.drain((index - 1)..(index));
             flag = Flag::Edit;
-        }
-        if _arg.to_lowercase() == "c"
-            || _arg.to_lowercase() == "-c"
-            || _arg.to_lowercase() == "--cat" {
+        } else if _arg.to_lowercase() == "-c" || _arg.to_lowercase() == "--cat" {
             script_arguments.drain((index - 1)..(index));
             flag = Flag::Cat;
-        }
-        if _arg.to_lowercase() == "s"
-            || _arg.to_lowercase() == "-s"
-            || _arg.to_lowercase() == "--ssh" {
+        } else if _arg.to_lowercase() == "-r" || _arg.to_lowercase() == "--remote" {
             flag = Flag::RemoteSsh;
             remote_address = script_arguments[index].clone();
+        } else if _arg.to_lowercase().starts_with('-') {
+            println!("--------------------------------------------------");
+            println!("- <-- is a simbol used for flag");
+            println!("Flag you are trying to use does not exist");
+            println!("Do you want to proceed (not treat this symbol as a flag)?");
+            println!("(y/n)");
+            println!("--------------------------------------------------");
+            loop {
+                let mut input = String::new();
+                io::stdin()
+                    .read_line(&mut input)
+                    .expect("Failed to read line");
+
+                let trimmed = input.trim();
+
+                match trimmed.to_lowercase().as_str() {
+                    "n" => {
+                        std::process::exit(0);
+                    }
+                    "y" => {
+                        break;
+                    }
+                    _ => {
+                        println!("Invalid input. Please enter 'y' or 'n'.");
+                    }
+                }
+            }
         }
     }
     let script_name = &script_arguments[0].clone();
@@ -80,23 +99,22 @@ fn main() {
             println!("--------------------------------------------------");
             execute_command(format!(
                 "scp {}{} {}:~/{} ",
-                folder_path, script_name, remote_address, script_name));
+                folder_path, script_name, remote_address, script_name
+            ));
             execute_command(format!(
                 "ssh {} ./{} {}",
-                remote_address, script_name, concated_script_arguments));
-            execute_command(format!("ssh {} rm {} ",
-                                    remote_address, script_name));
+                remote_address, script_name, concated_script_arguments
+            ));
+            execute_command(format!("ssh {} rm {} ", remote_address, script_name));
         }
         Flag::Edit => {
-            execute_command(format!("{} {}{}",
-                                    editor, folder_path, script_name));
+            execute_command(format!("{} {}{}", editor, folder_path, script_name));
         }
         Flag::Cat => {
             println!("--------------------------------------------------");
             println!("Content of {} :", script_name);
             println!("--------------------------------------------------");
-            execute_command(format!("cat {}{}",
-                                    folder_path, script_name));
+            execute_command(format!("cat {}{}", folder_path, script_name));
         }
     }
 }

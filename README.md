@@ -90,8 +90,10 @@ and restart your terminal emulator . I will add global installation in future
 - [x] support for script arguments
 - [x] remote execution 
 - [x] cat - you can see script with a flag
-- [x] edit - you can script with a flag
+- [x] edit - you can edit/create script with a flag
 - [x] manual/help command
+- [x] running nonexisting flag now result in popup 
+- [ ] editing not executable script make it executable
 - [ ] support for multiple paths
 - [ ] support for ~ (home directory)
 - [ ] support for other shells 
