@@ -2,7 +2,7 @@
 Simple cli tool for running scripts 
 
 ## How it works / How to use
-- Add scripts to `~/my_scripts` directory (or other directory specified in `$HOME/.config/riptide`)
+- Add scripts to `~/scripts` directory (or other directory specified in `$HOME/.config/riptide`)
 - run by typing `riptide $SCRIPT_NAME`. You can use `<TAB>` for autocompletion
 - example usage:
 ```bash
@@ -62,7 +62,7 @@ make install
 ```
 make install-with-alias
 ```
-##### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/my_scripts` with 3 examples
+##### !!note!! <br/>make will create config file at `$HOME/.config/riptide`, and scripts file at `$HOME/scripts` with 3 examples
 ## How to remove
 ```
 make uninstall
@@ -70,7 +70,7 @@ make uninstall
 ## Default config file
 ```toml
 [path]
-path="/home/talandar/my_scripts/"
+path="/home/username/scripts/"
 [editor]
 editor="vim"
 ```

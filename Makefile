@@ -6,9 +6,11 @@ BASHRC = ~/.bashrc
 COMMAND = complete -C __riptide_shell_completion $(APP_NAME)
 COMMAND_WITH_ALIAS = complete -C __riptide_shell_completion $(APP_ALIAS)
 
-# Main Rule 
-all: install
 
+help:
+	@echo "install - install riptide"
+	@echo "install-with-alias - install riptide with rt alias"
+	@echo "uninstall - uninstall riptide"
 
 # Compilation and installation rule
 install:
@@ -25,28 +27,28 @@ install:
 	fi
 	@mkdir -p ~/.config/riptide
 	@echo "[path]" > ~/.config/riptide/config.toml
-	@echo "path=\"$(HOME)/my_scripts/\"" >> ~/.config/riptide/config.toml
+	@echo "path=\"$(HOME)/scripts/\"" >> ~/.config/riptide/config.toml
 	@echo "[editor]" >> ~/.config/riptide/config.toml
 	@echo "editor=\"vim\"" >> ~/.config/riptide/config.toml
-	@mkdir -p ~/my_scripts
-	@echo "#!/bin/bash" > ~/my_scripts/my_script.sh
-	@echo "" >> ~/my_scripts/my_script.sh
-	@echo "echo \"Hello From my_script\"" >> ~/my_scripts/my_script.sh
-	@echo "" >> ~/my_scripts/my_script.sh
-	@chmod +x ~/my_scripts/my_script.sh
+	@mkdir -p ~/scripts
+	@echo "#!/bin/bash" > ~/scripts/my_script.sh
+	@echo "" >> ~/scripts/my_script.sh
+	@echo "echo \"Hello From my_script\"" >> ~/scripts/my_script.sh
+	@echo "" >> ~/scripts/my_script.sh
+	@chmod +x ~/scripts/my_script.sh
 
-	@echo "#!/bin/bash" > ~/my_scripts/echo_script_args.sh
-	@echo "" >> ~/my_scripts/echo_script_args.sh
-	@echo "echo \"Hello From echo_script_args\"" >> ~/my_scripts/echo_script_args.sh
-	@echo "" >> ~/my_scripts/echo_script_args.sh
-	@echo "for arg in \"\$$@\"; do" >> ~/my_scripts/echo_script_args.sh
-	@echo "echo \"\$$arg\"" >> ~/my_scripts/echo_script_args.sh
-	@echo "done" >> ~/my_scripts/echo_script_args.sh
-	@echo "" >> ~/my_scripts/echo_script_args.sh
-	@chmod +x ~/my_scripts/echo_script_args.sh
-	@echo "#!/bin/bash" > ~/my_scripts/make_dir.sh
-	@echo "mkdir $1" >> ~/my_scripts/make_dir.sh
-	@chmod +x ~/my_scripts/make_dir.sh
+	@echo "#!/bin/bash" > ~/scripts/echo_script_args.sh
+	@echo "" >> ~/scripts/echo_script_args.sh
+	@echo "echo \"Hello From echo_script_args\"" >> ~/scripts/echo_script_args.sh
+	@echo "" >> ~/scripts/echo_script_args.sh
+	@echo "for arg in \"\$$@\"; do" >> ~/scripts/echo_script_args.sh
+	@echo "echo \"\$$arg\"" >> ~/scripts/echo_script_args.sh
+	@echo "done" >> ~/scripts/echo_script_args.sh
+	@echo "" >> ~/scripts/echo_script_args.sh
+	@chmod +x ~/scripts/echo_script_args.sh
+	@echo "#!/bin/bash" > ~/scripts/make_dir.sh
+	@echo "mkdir $1" >> ~/scripts/make_dir.sh
+	@chmod +x ~/scripts/make_dir.sh
 	echo "Adding manpage for $(APP_ALIAS)...";
 	@sudo cp manpage/riptide.man /usr/share/man/man1/riptide.1
 	 
