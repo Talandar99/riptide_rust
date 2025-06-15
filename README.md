@@ -1,4 +1,5 @@
-# 🌊 Riptide 
+# 🌊 Riptide - Rust
+## !Archived. Currently rewriting in Go 
 Simple cli tool for running scripts 
 
 ## How it works / How to use
